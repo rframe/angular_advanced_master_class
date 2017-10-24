@@ -17,8 +17,6 @@
   display: inline-block;
 }
 
-/*/deep/ input*/
-/*:host >>> input*/
 :host /deep/ input {
   border: none;
   outline: none;
