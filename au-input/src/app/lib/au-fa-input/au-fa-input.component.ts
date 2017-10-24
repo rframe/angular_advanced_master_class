@@ -1,4 +1,4 @@
-import {AfterContentInit, Component, ContentChild, Input, OnInit} from '@angular/core';
+import {AfterContentInit, Component, ContentChild, HostBinding, Input, OnInit} from '@angular/core';
 import {InputRefDirective} from "../common/input-ref.directive";
 
 @Component({
@@ -8,12 +8,19 @@ import {InputRefDirective} from "../common/input-ref.directive";
 })
 export class AuFaInputComponent implements OnInit, AfterContentInit {
   ngAfterContentInit(): void {
-    console.log('input', this.input);
+    if (!this.input) {
+      console.error('the au-fa-input needs an input inside its content');
+    }
   }
 
   @Input() icon: string;
 
   @ContentChild(InputRefDirective) input: InputRefDirective;
+
+  @HostBinding('class.input-focus')
+  get isInputFocus(): boolean {
+    return !!this.input && this.input.focus;
+  }
 
   get classes() {
     const cssClasses = {
