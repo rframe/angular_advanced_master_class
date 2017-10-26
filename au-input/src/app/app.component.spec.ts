@@ -9,7 +9,8 @@ import {By} from "@angular/platform-browser";
 describe('AppComponent', () => {
   let component: AuFaInputComponent,
     fixture: ComponentFixture<AppComponent>,
-    el: DebugElement;
+    el: DebugElement,
+    emailField: DebugElement;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -24,18 +25,20 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.debugElement.componentInstance;
     el = fixture.debugElement;
-    fixture.detectChanges();
+    emailField = el.query(By.css('#email-field'));
   });
 
   it('should create the app', async(() => {
     expect(component).toBeTruthy();
   }));
 
-
   it('should create a font awesome email input', async()=>{
-    const emailField = el.query(By.css('#email-field'));
     expect(emailField).toBeTruthy();
+  });
+  it('should include the correct email icon inside the email input', async()=>{
     expect(emailField.query(By.css('i.icon.fa.fa-envelope'))).toBeTruthy();
+  });
+  it('should inclue the correct test input inside the email field', async()=>{
     expect(emailField.query(By.css('input.test-class'))).toBeTruthy();
   })
 });
