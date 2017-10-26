@@ -26,6 +26,8 @@ describe('AppComponent', () => {
     component = fixture.debugElement.componentInstance;
     el = fixture.debugElement;
     emailField = el.query(By.css('#email-field'));
+
+    fixture.detectChanges();
   });
 
   it('should create the app', async(() => {
