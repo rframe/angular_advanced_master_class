@@ -5,6 +5,7 @@ import {AuFaInputComponent} from "./lib/au-fa-input/au-fa-input.component";
 import {InputRefDirective} from "./lib/common/input-ref.directive";
 import {DebugElement} from "@angular/core";
 import {By} from "@angular/platform-browser";
+import {AuMdInputComponent} from "./lib/au-md-input/au-md-input.component";
 
 describe('AppComponent', () => {
   let component: AuFaInputComponent,
@@ -16,7 +17,8 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         AuFaInputComponent,
-        InputRefDirective
+        InputRefDirective,
+        AuMdInputComponent
       ],
     }).compileComponents();
   }));

@@ -1,0 +1,13 @@
+$border-color: #ff0000;
+
+:host-context(.au-Md-input-red-theme) {
+  border-color: $border-color;
+
+  &.input-focus {
+    /*border-color: #ff0000;*/
+    -webkit-box-shadow: 0 0 5px $border-color;
+    box-shadow: 0 0 5px $border-color;
+  }
+}
+
+
