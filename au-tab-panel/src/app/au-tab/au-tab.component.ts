@@ -8,6 +8,9 @@ import {Component, Input, OnInit} from '@angular/core';
 export class AuTabComponent implements OnInit {
 
   @Input() title: string;
+
+  @Input() selected: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
