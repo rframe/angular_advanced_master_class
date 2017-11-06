@@ -6,17 +6,13 @@ import {AuTabComponent} from '../au-tab/au-tab.component';
   templateUrl: './au-tab-panel.component.html',
   styleUrls: ['../tab-panel.component.scss']
 })
-export class AuTabPanelComponent implements OnInit, AfterContentInit {
+export class AuTabPanelComponent implements AfterContentInit {
 
   @ContentChildren(AuTabComponent)
   tabs: QueryList<AuTabComponent>;
 
-  constructor() { }
-
-  ngOnInit() {
-  }
   ngAfterContentInit(): void {
-    if (!this.tabs.some(x => x.selected) && !!this.tabs.length) {
+    if (!this.tabs.some(x => x.selected) && !!this.tabs.first) {
       this.tabs.first.selected = true;
     }
   }
@@ -27,5 +23,9 @@ export class AuTabPanelComponent implements OnInit, AfterContentInit {
       tab.selected = true;
     }
   }
-
+  get tabsContext() {
+    return {
+      tabs: this.tabs
+    };
+  }
 }
