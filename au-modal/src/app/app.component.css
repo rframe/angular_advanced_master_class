@@ -1,4 +1,3 @@
-@import "au-modal/au-modal.component.scss";
 
 .container {
   margin: 0 auto;
@@ -53,6 +52,8 @@ h1 {
 
 
 
-
+/deep/ .auth-modal .modal-body  {
+  min-width: 300px;
+}
 
 
