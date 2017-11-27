@@ -1,7 +1,8 @@
 
 $secondary: rgba(0, 0, 0, 0.117647);
 
-
+/** Why is it necissary to have another style declaration before .modal-body in order show the style .modal-body **/
+.modal-body {}
 
 .modal-body {
   position: absolute;
