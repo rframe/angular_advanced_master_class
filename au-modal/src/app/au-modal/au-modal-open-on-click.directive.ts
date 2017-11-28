@@ -1,11 +1,21 @@
-import {Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
+import {AfterContentInit, ContentChild, Directive, Input, TemplateRef, ViewContainerRef} from '@angular/core';
+import {AuModalComponent} from './au-modal.component';
 
 @Directive({
   selector: '[auModalOpenOnClick]'
 })
 export class AuModalOpenOnClickDirective {
 
-  @Input() set auModalOpenOnClick(element: HTMLBaseElement | Array<HTMLBaseElement>) {
+  @Input() set auModalOpenOnClick (element: HTMLBaseElement | Array<HTMLBaseElement>) {
+    this.setAuModalOpenOnClick(element);
+  }
+
+  @ContentChild(AuModalComponent) modal: AuModalComponent;
+
+  constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) {
+  }
+
+  setAuModalOpenOnClick(element: HTMLBaseElement | Array<HTMLBaseElement>) {
     let elements: Array<HTMLBaseElement> = [];
 
     if (element instanceof Array) {
@@ -20,9 +30,6 @@ export class AuModalOpenOnClickDirective {
         this.viewContainer.createEmbeddedView(this.templateRef);
       })
     })
-  }
-
-  constructor(private templateRef: TemplateRef<any>, private viewContainer: ViewContainerRef) {
   }
 
 }
