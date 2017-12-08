@@ -8,7 +8,11 @@ import {InputRefDirective} from './common/input-ref.directive';
   imports: [
     CommonModule
   ],
-  declarations:[AuFaInputComponent, AuMdInputComponent, InputRefDirective],
-  exports: [AuFaInputComponent, AuMdInputComponent, InputRefDirective]
+  declarations: [
+    AuFaInputComponent, AuMdInputComponent, InputRefDirective
+  ],
+  exports: [
+    AuFaInputComponent, AuMdInputComponent, InputRefDirective
+  ]
 })
 export class AuInputModule {}

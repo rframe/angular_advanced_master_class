@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AuModalComponent } from './au-modal.component';
+import {AuModalModule} from './au-modal.module';
+
 
 describe('AuModalComponent', () => {
   let component: AuModalComponent;
@@ -8,7 +10,9 @@ describe('AuModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuModalComponent ]
+      imports: [
+        AuModalModule.forRoot(),
+      ],
     })
     .compileComponents();
   }));
